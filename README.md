@@ -1,1 +1,1 @@
-# Sistema-examenes
+# Sistema Web de Gestión Académica para la institución educativa “I.E.E. N° 1070 MELITÓN CARVAJAL”, que permita agilizar y asegurar el correcto procesamiento de  los  datos, para  todo  el  personal  administrativo  y  contar  con  información  centralizada, oportuna, confiable,  precisa y que  esté disponible en tiempo real para la toma de exámenes en su alumnado
