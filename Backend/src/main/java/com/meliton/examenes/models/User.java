@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,7 +22,7 @@ import lombok.Setter;
 @Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
 @Table( name = "user")
-public class User {
+public class User{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,7 +34,7 @@ public class User {
 	private String email;
 	private boolean enabled = true;
 	private String perfil;
-	
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "user")
+	@JsonIgnore
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "user")
 	private Set<UserRole>userRole = new HashSet<>();
 }

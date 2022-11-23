@@ -44,8 +44,7 @@ public class UserService implements IUserService {
 	}
 	@Override
 	public void delete(Long UserId) {
-		// TODO Auto-generated method stub
-		
+		userRepository.deleteById(UserId);
 	}
 
 	
