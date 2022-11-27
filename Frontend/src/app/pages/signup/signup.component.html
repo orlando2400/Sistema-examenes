@@ -6,27 +6,31 @@
           <img src="../../../assets/add-user.png" alt="Imagen de logo registro">
         </div>
         <h1 class="text-center">Alumno regístrate en la plataforma</h1>
-        <form action="">
-          <mat-form-field class="full-width" appearence="outline">
+        <form (ngSumbit) = "formSubmit()" >
+          <mat-form-field class="full-width" appearance="outline">
               <mat-label>Nombre de Usuario</mat-label>
               <input matInput placeholder="Digite el nombre de usuario" type="text">
+              <mat-hint>Nombre de usuario es <strong>requerido</strong> para el registro</mat-hint>
           </mat-form-field>
-          <mat-form-field class="full-width" appearence="outline">
+          <mat-form-field class="full-width" appearance="outline">
             <mat-label>Nombres</mat-label>
             <input matInput placeholder="Digite sus nombres" type="text">
           </mat-form-field>
-          <mat-form-field class="full-width" appearence="outline">
+          <mat-form-field class="full-width" appearance="outline">
             <mat-label>Apellidos</mat-label>
             <input matInput placeholder="Digite sus apellidos" type="text">
           </mat-form-field>
-          <mat-form-field class="full-width" appearence="outline">
+          <mat-form-field class="full-width" appearance="outline">
             <mat-label>Email</mat-label>
-            <input matInput placeholder="Digite su correo electrónico" type="text">
+            <input matInput  placeholder="Digite su correo electrónico" type="email">
           </mat-form-field>
-          <mat-form-field class="full-width" appearence="outline">
+          <mat-form-field class="full-width" appearance="outline">
             <mat-label>Contraseña</mat-label>
-            <input matInput placeholder="Digite su contraseña" type="text">
+            <input matInput placeholder="Digite su contraseña" type="password">
           </mat-form-field>
+          <div class="container text-center">
+            <button mat-raised-button color="primary">Registrar</button>
+          </div>
         </form>
       </div>
     </div>
