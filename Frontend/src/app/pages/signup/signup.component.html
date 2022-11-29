@@ -1,37 +1,45 @@
 <div class="bootstrap-wrapper">
   <div class="container">
-    <div class="row">
+    <div class="row" style = "margin-top : 20px;">
       <div class="col-md-6 offset-md-3">
-        <div class="container text-center" style="margin-top: 30px;">
-          <img src="../../../assets/add-user.png" alt="Imagen de logo registro">
-        </div>
-        <h1 class="text-center">Alumno regístrate en la plataforma</h1>
-        <form (ngSumbit) = "formSubmit()" >
-          <mat-form-field class="full-width" appearance="outline">
-              <mat-label>Nombre de Usuario</mat-label>
-              <input matInput placeholder="Digite el nombre de usuario" type="text">
-              <mat-hint>Nombre de usuario es <strong>requerido</strong> para el registro</mat-hint>
-          </mat-form-field>
-          <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Nombres</mat-label>
-            <input matInput placeholder="Digite sus nombres" type="text">
-          </mat-form-field>
-          <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Apellidos</mat-label>
-            <input matInput placeholder="Digite sus apellidos" type="text">
-          </mat-form-field>
-          <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Email</mat-label>
-            <input matInput  placeholder="Digite su correo electrónico" type="email">
-          </mat-form-field>
-          <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Contraseña</mat-label>
-            <input matInput placeholder="Digite su contraseña" type="password">
-          </mat-form-field>
-          <div class="container text-center">
-            <button mat-raised-button color="primary">Registrar</button>
+        <mat-card>
+          <div class="container text-center" style="margin-top: 30px;">
+            <img src="../../../assets/add-user.png" alt="Imagen de logo registro">
           </div>
-        </form>
+
+          <h1 class="text-center">Alumno regístrate en la plataforma</h1>
+
+          <form (ngSubmit) = "formSubmit()" >
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Nombre de Usuario</mat-label>
+                <input  [(ngModel)] = "user.userName" name = "username" matInput placeholder="Digite el nombre de usuario" type="text">
+                <mat-hint>Nombre de usuario es <strong>requerido</strong> para el registro</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Nombres</mat-label>
+              <input  [(ngModel)] = "user.names" name = "names" matInput placeholder="Digite sus nombres">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Apellidos</mat-label>
+              <input  [(ngModel)] = "user.surnames" name = "surname" matInput placeholder="Digite sus apellidos">
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input  [(ngModel)] = "user.email" name = "email" matInput  placeholder="Digite su correo electrónico">
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Contraseña</mat-label>
+              <input  [(ngModel)] = "user.password" name = "password" type="password" matInput placeholder="Digite su contraseña" >
+            </mat-form-field>
+
+            <div class="container text-center">
+              <button mat-raised-button color="primary">Registrar</button>
+            </div>
+
+          </form>
+        </mat-card>
       </div>
     </div>
   </div>

@@ -8,6 +8,7 @@ import url from './linkBackend';
 export class UserService {
 
     constructor(private httpClient: HttpClient) { }
+
     public addUser(user:any){
       return this.httpClient.post(`${url}/user/register`,user);
     }
