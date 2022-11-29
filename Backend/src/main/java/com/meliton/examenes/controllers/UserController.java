@@ -20,7 +20,7 @@ import com.meliton.examenes.services.UserService;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("*")
 public class UserController {
 	
 	@Autowired
@@ -30,7 +30,7 @@ public class UserController {
 	public User register(@RequestBody User user) throws Exception {
 		
 		user.setPerfil("default.png");
-		Set<UserRole> roles = new HashSet<>();
+		Set<UserRole> userRoles = new HashSet<>();
 		
 		Role role = new Role();
 		role.setId(2L);
@@ -40,9 +40,9 @@ public class UserController {
 		userRole.setUser(user);
 		userRole.setRole(role);
 		
-		roles.add(userRole);
+		userRoles.add(userRole);
 		
-		return userService.register(user, roles);
+		return userService.register(user, userRoles);
 		
 	}
 	//Método get para obtener un usuario por su nombre de user
