@@ -25,9 +25,9 @@ export class SignupComponent implements OnInit {
 
   formSubmit(){
     console.log(this.user);
-    if(this.user.userName == '' || this.user.userName == null){
-      this.snack.open('El nombre de usuario es requerido !!','Aceptar',{
-        duration : 2000,
+    if((this.user.userName == '' || null) && (this.user.password == '' || null)){
+      this.snack.open('Los campos enmarcados son obligatorios !!','Aceptar',{
+        duration : 2500,
         verticalPosition : 'top',
         horizontalPosition : 'right'
       });
@@ -38,6 +38,13 @@ export class SignupComponent implements OnInit {
       (data) => {
         console.log(data);
         Swal.fire('Usuario guardado','Usuario registrado con exito en el sistema','success');
+        this.user = {
+          userName : '',
+          password : '',
+          names : '',
+          surnames : '',
+          email: ''
+      }
       },(error) => {
         console.log(error);
         this.snack.open('Ha ocurrido un error en el sistema !!','Aceptar',{
@@ -45,7 +52,9 @@ export class SignupComponent implements OnInit {
         });
       }
     )
+
   }
+
 
 }
 

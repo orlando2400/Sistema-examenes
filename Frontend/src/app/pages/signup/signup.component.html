@@ -12,7 +12,7 @@
           <form (ngSubmit) = "formSubmit()" >
             <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Nombre de Usuario</mat-label>
-                <input  [(ngModel)] = "user.userName" name = "username" matInput placeholder="Digite el nombre de usuario" type="text">
+                <input required [(ngModel)] = "user.userName" name = "username" matInput placeholder="Digite el nombre de usuario" type="text">
                 <mat-hint>Nombre de usuario es <strong>requerido</strong> para el registro</mat-hint>
             </mat-form-field>
 
@@ -31,7 +31,7 @@
 
             <mat-form-field class="full-width" appearance="outline">
               <mat-label>Contraseña</mat-label>
-              <input  [(ngModel)] = "user.password" name = "password" type="password" matInput placeholder="Digite su contraseña" >
+              <input required [(ngModel)] = "user.password" name = "password" type="password" matInput placeholder="Digite su contraseña" >
             </mat-form-field>
 
             <div class="container text-center">
