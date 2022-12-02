@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row" style = "margin-top : 20px;">
+      <div class="col-md-6 offset-md-3">
+        <mat-card>
+          <div class="container text-center" style="margin-top: 30px;">
+            <img src="../../../assets/Melitón_Carvajal.png" alt="Imagen de logo registro" style="height: 100px;">
+          </div>
+
+          <h1 class="text-center">Iniciar sesión</h1>
+
+          <form (ngSubmit) = "formSubmit()" >
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Nombre de Usuario</mat-label>
+                <input required [(ngModel)] = "user.userName" name = "username" matInput placeholder="Digite el nombre de usuario" type="text">
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+              <mat-label>Contraseña</mat-label>
+              <input required [(ngModel)] = "user.password" name = "password" matInput placeholder="Digite su contraseña">
+            </mat-form-field>
+
+            <div class="container text-center">
+              <button mat-raised-button color="primary">Iniciar sesión</button>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
