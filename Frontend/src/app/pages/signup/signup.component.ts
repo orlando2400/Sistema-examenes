@@ -10,7 +10,7 @@ import { UserService } from '../../services/user.service';
 })
 export class SignupComponent implements OnInit {
   public user = {
-    userName : '',
+    username : '',
     password : '',
     names : '',
     surnames : '',
@@ -25,7 +25,7 @@ export class SignupComponent implements OnInit {
 
   formSubmit(){
     console.log(this.user);
-    if((this.user.userName == '' || null) && (this.user.password == '' || null)){
+    if((this.user.username == '' || null) && (this.user.password == '' || null)){
       this.snack.open('Los campos enmarcados son obligatorios !!','Aceptar',{
         duration : 2500,
         verticalPosition : 'top',
@@ -39,7 +39,7 @@ export class SignupComponent implements OnInit {
         console.log(data);
         Swal.fire('Usuario guardado','Usuario registrado con exito en el sistema','success');
         this.user = {
-          userName : '',
+          username : '',
           password : '',
           names : '',
           surnames : '',

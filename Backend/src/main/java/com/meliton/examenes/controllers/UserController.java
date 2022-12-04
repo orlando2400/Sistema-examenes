@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.meliton.examenes.models.Role;
 import com.meliton.examenes.models.User;
 import com.meliton.examenes.models.UserRole;
-import com.meliton.examenes.services.UserService;
+import com.meliton.examenes.services.impl.UserServiceImpl;
 
 @RestController
 @RequestMapping("/user")
@@ -24,7 +24,7 @@ import com.meliton.examenes.services.UserService;
 public class UserController {
 	
 	@Autowired
-	private UserService userService;
+	private UserServiceImpl userService;
 	
 	@PostMapping("/register")
 	public User register(@RequestBody User user) throws Exception {

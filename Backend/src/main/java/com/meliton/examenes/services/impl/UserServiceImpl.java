@@ -1,4 +1,4 @@
-package com.meliton.examenes.services;
+package com.meliton.examenes.services.impl;
 
 import java.util.Set;
 
@@ -9,9 +9,10 @@ import com.meliton.examenes.models.User;
 import com.meliton.examenes.models.UserRole;
 import com.meliton.examenes.repository.IRoleRepository;
 import com.meliton.examenes.repository.IUserRepository;
+import com.meliton.examenes.services.IUserService;
 
 @Service
-public class UserService implements IUserService {
+public class UserServiceImpl implements IUserService {
 	
 	
 	@Autowired
@@ -22,7 +23,7 @@ public class UserService implements IUserService {
 	
 	@Override
 	public User register(User user, Set<UserRole> userRoles) throws Exception{
-		User userLocal = userRepository.findByUserName(user.getUserName());
+		User userLocal = userRepository.findByUserName(user.getUsername());
 		if(userLocal != null) {
 			System.out.println("Usuario registrado en el sistema");
 		}
