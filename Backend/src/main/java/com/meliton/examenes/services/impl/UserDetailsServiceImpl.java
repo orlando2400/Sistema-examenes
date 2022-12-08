@@ -11,11 +11,12 @@ import com.meliton.examenes.repository.IUserRepository;
 public class UserDetailsServiceImpl implements UserDetailsService{
 	
 	@Autowired
-	IUserRepository UserRepository;
+	IUserRepository userRepository;
 
 	@Override
+	//Carga un usuario por su Username
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = UserRepository.findByUserName(username);
+		User user = userRepository.findByUserName(username);
 		if(user == null) {
 			throw new UsernameNotFoundException("Usuario no encontrado en el sistema");
 		}
